@@ -194,8 +194,11 @@ class CalendarList extends Component {
       }
     }
     
-    if (this.props.onVisibleMonthsChange) {
-      this.props.onVisibleMonthsChange(visibleMonths);
+     if (this.props.onVisibleMonthsChange) {
+      clearTimeout(this.scrollTimeout);
+      this.scrollTimeout = setTimeout(() => {
+        this.props.onVisibleMonthsChange(visibleMonths);
+      }, 200);
     }
 
     this.setState({
