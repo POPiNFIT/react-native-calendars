@@ -65,6 +65,8 @@ class CalendarList extends Component {
   constructor(props) {
     super(props);
     
+    this.scrollTimeout = undefined;
+    
     this.style = styleConstructor(props.theme);
     
     this.viewabilityConfig = {
